@@ -1,0 +1,75 @@
+﻿@model Pubwebkit.Promo.Web.ViewModel.ContactMessageViewModel
+@{
+    ViewBag.Title = "Contact";
+}
+
+<section id="contact">
+    <div class="container">
+        <h1>Contact</h1>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <p>Let's call us, follow us and email us</p>
+                <table>
+                    <tr>
+                        <td>
+                            <a href="tel:+380675040586">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fa fa-square fa-stack-2x"></i>
+                                    <i class="fa fa-phone fa-inverse fa-stack-1x"></i>
+                                </span>
+                            </a>
+                        </td>
+                        <td class="contact">
+                            <a href="tel:+380675040586">+38 (067) 504 05 86</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="http://www.twitter.com/pubwebkit">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fa fa-square fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-inverse fa-stack-1x"></i>
+                                </span>
+                            </a>
+                        </td>
+                        <td class="contact">
+                            <a href="http://www.twitter.com/pubwebkit">@@pubwebkit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="mailto:inbox@pubwebkit.com">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fa fa-square fa-stack-2x"></i>
+                                    <i class="fa fa-envelope fa-inverse fa-stack-1x"></i>
+                                </span>
+                            </a>
+                        </td>
+                        <td class="contact">@Html.Mailto("inbox@pubwebkit.com", "inbox@pubwebkit.com")</td>
+                    </tr>
+                </table>
+                <br />
+            </div>
+            <div class="col-md-6">
+                <p>Or you can use form below if you want to tell us something quickly</p>
+                @using (Html.BeginForm("SendMessage", "Contact", FormMethod.Post, new {role="form"}))
+                {
+                    @Html.ValidationSummary("Oh snap! Something goes wrong:")
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Name, new { @class="control-label" })
+                        @Html.TextBoxFor(x => x.Name, new { @class="form-control", placeholder="Your name" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Email, new { @class="control-label" }) 
+                        @Html.TextBoxFor(x => x.Email, new { @class="form-control", placeholder="Enter email"})
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Message, new { @class="control-label" }) 
+                        @Html.TextAreaFor(x => x.Message, new { @class="form-control", rows="5" })
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send a message</button>
+                }
+            </div>
+        </div>
+    </div>
+</section>

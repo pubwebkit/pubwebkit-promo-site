@@ -1,0 +1,6 @@
+[submodule "Pubwebkit.Promo.Web/Content/twitter-bootstrap"]
+	path = Pubwebkit.Promo.Web/Content/twitter-bootstrap
+	url = https://banguit@github.com/twbs/bootstrap.git
+[submodule "Pubwebkit.Promo.Web/Content/font-awesome"]
+	path = Pubwebkit.Promo.Web/Content/font-awesome
+	url = https://banguit@github.com/FortAwesome/Font-Awesome.git

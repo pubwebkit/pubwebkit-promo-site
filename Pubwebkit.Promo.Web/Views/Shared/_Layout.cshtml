@@ -1,0 +1,117 @@
+﻿@using System.Web.Configuration
+@{
+    var isHome = (ViewContext.RouteData.GetRequiredString("action") == "Index" && ViewContext.RouteData.GetRequiredString("controller") == "Home");
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title / Pubwebkit</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pubwebkit &#8212; a cloud service that helps you prepare digital editions and share it with friends or publish for sell.">
+    <meta name="keywords" content="ebook, publish, create, online">
+    <meta name="author" content="Dmitry Antonenko" />
+
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    @Scripts.Render("~/Bundles/IE8")
+    <![endif]-->
+
+    <!-- CSS / LESS -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic" rel="stylesheet" type="text/css">
+    @if (HttpContext.Current.IsDebuggingEnabled) {
+    <link rel="stylesheet/less" href="~/Content/less/main.less">
+    <script> /* Provisory for dev environment: */ localStorage.clear(); </script>
+    <script src="~/Scripts/lib/less-1.4.1.min.js"></script>
+    }
+    else
+    {
+    <link href="~/Content/css/styles.css" rel="stylesheet" type="text/css">
+    }
+    @RenderSection("Stylesheets", false)
+</head>
+<body>
+    <div id="content-wrapper">
+        <header>
+            <div class="navbar navbar-inverse">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @if (!isHome)
+                        {
+                            <a class="navbar-brand pull-left" title="Go to home page" href="@Url.Action("Index", "Home")"></a>
+                        }
+                    </div>
+                    <nav class="collapse navbar-collapse navbar-header navbar-right" role="navigation">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li class="separator"></li>
+                            <li><a href="/nightly-build">Nightly Build</a></li>
+                            <li class="separator"></li>
+                            <li>@Html.ActionLink("Roadmap", "Index", "Roadmap")</li>
+                            <li class="separator"></li>
+                            <li>@Html.ActionLink("Discuss", "Index", "Discuss")</li>
+                            <li class="separator"></li>
+                            <li><a href="@WebConfigurationManager.AppSettings["ProjectTrackerToolLink"]">Project Tracker</a></li>
+                            <li class="separator"></li>
+                            <li>@Html.ActionLink("Team", "Index", "Team")</li>
+                            <li class="separator"></li>
+                            <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            @RenderSection("BodyHeader", false)
+        </header>
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 col-xs-12 subscribe-me">
+                    <h3>Subscribe</h3>
+                    <p>Do you want to be notified about updates? Please fill form below to subscribe to the Newsletter and stay tuned.</p>
+                    @using (Html.BeginForm("Subscribe", "Subscription", FormMethod.Post, new { @class = "form-inline", role = "form" }))
+                    {
+                        <div class="form-group">
+                            <input class="form-control" data-val="true" data-val-email="Specified email address is not valid." data-val-required="Email adress is required." id="Email" name="Email" placeholder="Enter email" type="email" />
+                        </div>
+                        <button type="submit" class="btn btn-default btn-danger">Subscribe</button>
+                    }
+                </div>
+                <div class="col-md-4 footer-navigation">
+                    <h3 class="hidden-xs hidden-sm">Share</h3>
+                    <div class="row share-row">
+                        <div class="col-md-3 col-sm-1 col-xs-1">
+                            <a href="http://twitter.com/share?text=" onclick="this.href = this.href + encodeURIComponent('Pubwebkit - a cloud-service that helps you prepare digital editions and share it with friends or publish for sell.'); return !window.open(this.href, 'Twitter', 'width=640,height=300');"><i class="fa fa-twitter"></i></a>
+                        </div>
+                        <div class="col-md-3 col-sm-1 col-xs-1">
+                            <a href="http://www.facebook.com/sharer/sharer.php?u=" onclick="this.href = this.href + 'http://' + window.location.hostname + window.location.pathname; return !window.open(this.href, 'Facebook', 'width=640,height=300');"><i class="fa fa-facebook"></i></a>
+                        </div>
+                        <div class="col-md-3 col-sm-1 col-xs-1">
+                            <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                        <div class="col-md-3 col-sm-1 col-xs-1">
+                            <a href="https://plus.google.com/share?url=" onclick="javascript:this.href = this.href + encodeURIComponent('http://' + window.location.hostname + window.location.pathname); return !window.open(this.href, 'Google Plus', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                        <div class="clearfix visible-lg visible-md"></div>
+                        <div class="col-md-12 col-sm-8 col-xs-8 copy">Copyright 2013 &copy; Pubwebkit</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    @Scripts.Render("~/Bundles/CommonScripts")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Html.Toastr()
+    @RenderSection("Scripts", false)
+</body>
+</html>

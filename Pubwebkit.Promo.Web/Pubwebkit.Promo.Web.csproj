@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1D524959-594E-4C97-9F8C-C8DCFD746DAB}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pubwebkit.Promo.Web</RootNamespace>
+    <AssemblyName>Pubwebkit.Promo.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.0-rc1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0-rc1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Mvc">
+      <HintPath>..\packages\Mvc4Futures.4.0.20710.0\lib\net40\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Mvc.Mailer">
+      <HintPath>..\packages\MvcMailer.4.5\lib\45\Mvc.Mailer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\GlobalConfig.cs" />
+    <Compile Include="App_Start\IocConfig.cs" />
+    <Compile Include="App_Start\NinjectDependencyResolver.cs" />
+    <Compile Include="App_Start\NinjectDependencyScope.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DiscussController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RoadmapController.cs" />
+    <Compile Include="Controllers\SubscriptionController.cs" />
+    <Compile Include="Controllers\TeamController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Mailers\ContactMailer.cs" />
+    <Compile Include="Mailers\IContactMailer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\SubscriptionViewModel.cs" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\images\dman.jpg" />
+    <Content Include="Content\twitter-bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\twitter-bootstrap\js\affix.js" />
+    <Content Include="Content\twitter-bootstrap\js\alert.js" />
+    <Content Include="Content\twitter-bootstrap\js\button.js" />
+    <Content Include="Content\twitter-bootstrap\js\carousel.js" />
+    <Content Include="Content\twitter-bootstrap\js\collapse.js" />
+    <Content Include="Content\twitter-bootstrap\js\dropdown.js" />
+    <Content Include="Content\twitter-bootstrap\js\modal.js" />
+    <Content Include="Content\twitter-bootstrap\js\popover.js" />
+    <Content Include="Content\twitter-bootstrap\js\scrollspy.js" />
+    <Content Include="Content\twitter-bootstrap\js\tab.js" />
+    <Content Include="Content\twitter-bootstrap\js\tests\index.html" />
+    <Content Include="Content\twitter-bootstrap\js\tests\unit\affix.js" />
+    <Content Include="Content\twitter-bootstrap\js\tests\unit\alert.js" />
+    <Content Include="Content\twitter-bootstrap\js\tests\unit\button.js" />
+    <Content Include="Content\twitter-bootstrap\js\tests\unit\carousel.js" />
+    <Content Include="Content\twitter-bootstrap\js\tests\unit\collapse.js" />
+    <Content Include="Content\twitter-bootstrap\js\tests\unit\dropdown.js" />
+    <Content Include="Content\twitter-bootstrap\js\tests\unit\modal.js" />
+    <Content Include="Content\twitter-bootstrap\js\tests\unit\phantom.js" />
+    <Content Include="Content\twitter-bootstrap\js\tests\unit\popover.js" />
+    <Content Include="Content\twitter-bootstrap\js\tests\unit\scrollspy.js" />
+    <Content Include="Content\twitter-bootstrap\js\tests\unit\tab.js" />
+    <Content Include="Content\twitter-bootstrap\js\tests\unit\tooltip.js" />
+    <Content Include="Content\twitter-bootstrap\js\tests\vendor\jquery.min.js" />
+    <Content Include="Content\twitter-bootstrap\js\tests\vendor\qunit.css" />
+    <Content Include="Content\twitter-bootstrap\js\tests\vendor\qunit.js" />
+    <Content Include="Content\twitter-bootstrap\js\tests\visual\affix.html" />
+    <Content Include="Content\twitter-bootstrap\js\tests\visual\alert.html" />
+    <Content Include="Content\twitter-bootstrap\js\tests\visual\button.html" />
+    <Content Include="Content\twitter-bootstrap\js\tests\visual\carousel.html" />
+    <Content Include="Content\twitter-bootstrap\js\tests\visual\collapse.html" />
+    <Content Include="Content\twitter-bootstrap\js\tests\visual\dropdown.html" />
+    <Content Include="Content\twitter-bootstrap\js\tests\visual\modal.html" />
+    <Content Include="Content\twitter-bootstrap\js\tests\visual\popover.html" />
+    <Content Include="Content\twitter-bootstrap\js\tests\visual\scrollspy.html" />
+    <Content Include="Content\twitter-bootstrap\js\tests\visual\tab.html" />
+    <Content Include="Content\twitter-bootstrap\js\tests\visual\tooltip.html" />
+    <Content Include="Content\twitter-bootstrap\js\tooltip.js" />
+    <Content Include="Content\twitter-bootstrap\js\transition.js" />
+    <Content Include="Content\twitter-bootstrap\less\alerts.less" />
+    <Content Include="Content\twitter-bootstrap\less\badges.less" />
+    <Content Include="Content\twitter-bootstrap\less\bootstrap.less" />
+    <Content Include="Content\twitter-bootstrap\less\breadcrumbs.less" />
+    <Content Include="Content\twitter-bootstrap\less\button-groups.less" />
+    <Content Include="Content\twitter-bootstrap\less\buttons.less" />
+    <Content Include="Content\twitter-bootstrap\less\carousel.less" />
+    <Content Include="Content\twitter-bootstrap\less\close.less" />
+    <Content Include="Content\twitter-bootstrap\less\code.less" />
+    <Content Include="Content\twitter-bootstrap\less\component-animations.less" />
+    <Content Include="Content\twitter-bootstrap\less\dropdowns.less" />
+    <Content Include="Content\twitter-bootstrap\less\forms.less" />
+    <Content Include="Content\twitter-bootstrap\less\glyphicons.less" />
+    <Content Include="Content\twitter-bootstrap\less\grid.less" />
+    <Content Include="Content\twitter-bootstrap\less\input-groups.less" />
+    <Content Include="Content\twitter-bootstrap\less\jumbotron.less" />
+    <Content Include="Content\twitter-bootstrap\less\labels.less" />
+    <Content Include="Content\twitter-bootstrap\less\list-group.less" />
+    <Content Include="Content\twitter-bootstrap\less\media.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\alerts.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\background-variant.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\border-radius.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\buttons.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\center-block.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\clearfix.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\forms.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\gradients.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\grid.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\hide-text.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\image.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\labels.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\list-group.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\opacity.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\pagination.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\panels.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\resize.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\size.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\table-row.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="Content\twitter-bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="Content\twitter-bootstrap\less\modals.less" />
+    <Content Include="Content\twitter-bootstrap\less\navbar.less" />
+    <Content Include="Content\twitter-bootstrap\less\navs.less" />
+    <Content Include="Content\twitter-bootstrap\less\normalize.less" />
+    <Content Include="Content\twitter-bootstrap\less\pager.less" />
+    <Content Include="Content\twitter-bootstrap\less\pagination.less" />
+    <Content Include="Content\twitter-bootstrap\less\panels.less" />
+    <Content Include="Content\twitter-bootstrap\less\popovers.less" />
+    <Content Include="Content\twitter-bootstrap\less\print.less" />
+    <Content Include="Content\twitter-bootstrap\less\progress-bars.less" />
+    <Content Include="Content\twitter-bootstrap\less\responsive-embed.less" />
+    <Content Include="Content\twitter-bootstrap\less\responsive-utilities.less" />
+    <Content Include="Content\twitter-bootstrap\less\scaffolding.less" />
+    <Content Include="Content\twitter-bootstrap\less\tables.less" />
+    <Content Include="Content\twitter-bootstrap\less\theme.less" />
+    <Content Include="Content\twitter-bootstrap\less\thumbnails.less" />
+    <Content Include="Content\twitter-bootstrap\less\tooltip.less" />
+    <Content Include="Content\twitter-bootstrap\less\type.less" />
+    <Content Include="Content\twitter-bootstrap\less\utilities.less" />
+    <Content Include="Content\twitter-bootstrap\less\variables.less" />
+    <Content Include="Content\twitter-bootstrap\less\wells.less" />
+    <Content Include="Content\twitter-bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\twitter-bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\twitter-bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\font-awesome\less\core.less" />
+    <Content Include="Content\font-awesome\less\extras.less" />
+    <Content Include="Content\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\font-awesome\less\icons.less" />
+    <Content Include="Content\font-awesome\less\larger.less" />
+    <Content Include="Content\font-awesome\less\list.less" />
+    <Content Include="Content\font-awesome\less\mixins.less" />
+    <Content Include="Content\font-awesome\less\path.less" />
+    <Content Include="Content\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\font-awesome\less\spinning.less" />
+    <Content Include="Content\font-awesome\less\stacked.less" />
+    <Content Include="Content\font-awesome\less\variables.less" />
+    <Content Include="Content\less\toastr.less" />
+    <None Include="Properties\PublishProfiles\pubwebkit.pubxml" />
+    <None Include="Pubwebkit.Promo.Web.wpp.targets">
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="ViewModel\ContactMessageViewModel.cs" />
+    <Content Include="Content\css\styles.css" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\lib\less-1.4.1.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\toastr.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\discuss%402x.png" />
+    <Content Include="Content\images\discuss.png" />
+    <Content Include="Content\images\editor-background%402x.png" />
+    <Content Include="Content\images\editor-background.png" />
+    <Content Include="Content\images\features-collaboration.svg" />
+    <Content Include="Content\images\features-share-and-sell.svg" />
+    <Content Include="Content\images\features-style.svg" />
+    <Content Include="Content\images\logo%402x.png" />
+    <Content Include="Content\images\logo-big%402x.png" />
+    <Content Include="Content\images\logo-big.png" />
+    <Content Include="Content\images\logo-little-gray%402x.png" />
+    <Content Include="Content\images\logo-little-gray.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\nightly-build%402x.png" />
+    <Content Include="Content\images\nightly-build.png" />
+    <Content Include="Content\images\project-tracker%402x.png" />
+    <Content Include="Content\images\project-tracker.png" />
+    <Content Include="Content\images\pwk-editor%402x.png" />
+    <Content Include="Content\images\pwk-editor.png" />
+    <Content Include="Content\images\roadmap%402x.png" />
+    <Content Include="Content\images\roadmap.png" />
+    <Content Include="Content\images\toastr-error%402x.png" />
+    <Content Include="Content\images\toastr-error.png" />
+    <Content Include="Content\images\toastr-info%402x.png" />
+    <Content Include="Content\images\toastr-info.png" />
+    <Content Include="Content\images\toastr-success%402x.png" />
+    <Content Include="Content\images\toastr-success.png" />
+    <Content Include="Content\images\toastr-warn%402x.png" />
+    <Content Include="Content\images\toastr-warn.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\app\bootstrapper.js" />
+    <Content Include="Scripts\bootstrap-validation.js" />
+    <Content Include="Scripts\ga.js" />
+    <None Include="Scripts\jquery-1.11.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.11.1.js" />
+    <Content Include="Scripts\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\jquery-1.11.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\lib\retina.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\ContactMailer\_Layout.cshtml" />
+    <Content Include="Views\ContactMailer\ContactForm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="nightly-build\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\common.less" />
+    <Content Include="Content\less\layers.less" />
+    <Content Include="Content\less\main.less" />
+    <Content Include="Content\less\retina.less" />
+    <Content Include="Content\less\variables.less" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\Local IIS.pubxml" />
+    <Content Include="Views\Roadmap\Index.cshtml" />
+    <Content Include="Views\Discuss\Index.cshtml" />
+    <Content Include="Views\Team\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pubwebkit.Promo.Data.Contracts\Pubwebkit.Promo.Data.Contracts.csproj">
+      <Project>{CB055601-254B-4533-B2E2-F8A0E063E165}</Project>
+      <Name>Pubwebkit.Promo.Data.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pubwebkit.Promo.Data\Pubwebkit.Promo.Data.csproj">
+      <Project>{CDBAF6AD-669A-491D-BE6C-BE427AD0F768}</Project>
+      <Name>Pubwebkit.Promo.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pubwebkit.Promo.Infrastructure\Pubwebkit.Promo.Infrastructure.csproj">
+      <Project>{AF2049AA-A5EF-4DD3-9C24-389F6F770183}</Project>
+      <Name>Pubwebkit.Promo.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pubwebkit.Promo.Model\Pubwebkit.Promo.Model.csproj">
+      <Project>{4DDA6D62-7639-4C68-ACFF-DF05C77B1EEB}</Project>
+      <Name>Pubwebkit.Promo.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1068/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://www.pubwebkit.local</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>lessc "$(ProjectDir)Content\less\main.less" "$(ProjectDir)Content\css\styles.css" --clean-css</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

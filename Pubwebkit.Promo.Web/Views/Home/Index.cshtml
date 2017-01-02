@@ -1,0 +1,94 @@
+﻿@using System.Web.Configuration
+@{
+    ViewBag.Title = "Home";
+}
+
+@section BodyHeader
+{
+    <div class="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <figure class="logo">
+                        <img src="~/Content/images/logo-big.png" title="Pubwebkit" />
+                        <figcaption>A <strong>cloud service</strong> that helps you <strong>prepare digital editions</strong> and <strong>share</strong> it with friends or <strong>publish for sell</strong>.</figcaption>
+                    </figure>
+                </div>
+                <div class="clearfix visible-sm"></div>
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <figure class="editor-vector">
+                        <img src="~/Content/images/pwk-editor.png" />
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<section id="features">
+    <div class="container">
+        <h1 class="page-section-header">What is it?</h1>
+        <p class="page-section-header-description">The new way to make publishing on the web easier.</p>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <figure class="feature-style">
+                    <figcaption>
+                        <h3>Build your own style</h3>
+                        Use powerful editor to create your ebook in various styles. It's includes: Cover Designer, Template Editor, Community Snippets and more...
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-6">
+                <figure class="features-collaboration">
+                    <figcaption>
+                        <h3>Create together</h3>
+                        Pubwebkit lets users communicate, co-author, co-browse and guide each other.
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-6">
+                <figure class="features-share-and-sell">
+                    <figcaption>
+                        <h3>Share and sell</h3>
+                        You can share your digital editions with your friends, share free chapters with the community and sell complete editions over the world.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="let-me-in">
+    <div class="container">
+        <h1 class="page-section-header">Cool! Let me in!</h1>
+        <p class="page-section-header-description">Currently the project under construction and you can take a part in it and help make it the best publishing tool ever.</p>
+    </div>
+</section>
+<section id="help-description">
+    <div class="container">
+        <h1 class="page-section-header">So, what can I do?</h1>
+        <p class="page-section-header-description">You can help achieve the goal by providing feedback and proposals regarding functionality and features.</p>
+        <div class="row">
+            <div class="col-md-3 help-discuss">
+                <h5>Keep in touch.</h5>
+                <p>Do you have some propositions or ideas relating project? Lets @Html.ActionLink("discuss", "Index", "Discuss") it! This will helps things done in the right direction and in time.</p>
+            </div>
+            <div class="col-md-3 help-project-tracking">
+                <h5>Project tracking.</h5>
+                <p>If you have found a bug in already implemented functionality, please report about it using <a href="@WebConfigurationManager.AppSettings["ProjectTrackerToolLink"]">Project Tracking Tool</a>.</p>
+            </div>
+            <div class="col-md-3 help-roadmap">
+                <h5>Roadmap.</h5>
+                <p>You can @Html.ActionLink("follow development process", "Index", "Roadmap") and to see what features has been implemented and what will be.</p>
+            </div>
+            <div class="col-md-3 help-nightly-build">
+                <h5>Editor nightly build.</h5>
+                <p>Anytime you can try nightly build of editor and see it in action.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a href="/nightly-build" class="btn btn-primary btn-lg">Show me editor in action</a>
+            </div>
+        </div>
+    </div>
+</section>
